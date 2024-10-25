@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px auto;
+        padding: 0px;
+    }
+</style>
+
+<body>
+    <div class="wappper">
+        <form action="#">
+            <label for="">User name</label>
+            <input type="text" id="txtus" placeholder="User name">
+            <br><label for="">Password</label>
+            <input type="text" id="txtpw" placeholder="Password">
+            <br>
+            <input type="radio" name="gt" value="Nam"> Nam
+            <input type="radio" name="gt" value="Nữ"> Nữ
+            <br>
+            <input type="checkbox" value="Trung nguyên"> Trung nguyên
+            <br>
+            <input type="checkbox" value="MeKong">MeKong
+            <br>
+            <input type="checkbox" value="Trà sữa"> Trà sữa
+            <br>
+            <input type="button" name="" id="" value="Nhập" onclick="nhap()">
+            <br>
+        </form>
+    </div>
+</body>
+<script>
+    function nhap() {
+        var tendn, pw;
+        tendn = document.getElementById("txtus").value;
+        mk = document.getElementById("txtus").value;
+        var cafe = new Array();
+        var taphop = document.querySelectorAll("input[type='checkbox']");
+        taphop.forEach(function(chk) {
+            if (chk.checked)
+                cafe.push(chk.value)
+            var gtinh;
+            var taphop = document.querySelectorAll("input[type='radio']");
+            taphop.forEach(function(ra) {
+                if (ra.check)
+                    gtinh = ra.value;
+
+            });
+            var w = window.open("infor.html");
+            localStorage.setItem("us", tendn);
+            localStorage.setItem("pw", mk);
+            localStorage.setItem("cf", cafe);
+            localStorage.setItem("gt", gtinh);
+        })
+    }
+</script>
+
+</html>
